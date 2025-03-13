@@ -1,0 +1,41 @@
+<!-- src/app/home/home.page.html -->
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      iOS Calculator
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="calculator-container">
+    <div class="calculator-display">
+      <div class="previous-operand">{{ previousOperand }} {{ operation }}</div>
+      <div class="current-operand">{{ currentOperand || '0' }}</div>
+    </div>
+
+    <div class="calculator-buttons">
+      <ion-button color="medium" (click)="clear()">AC</ion-button>
+      <ion-button color="medium" (click)="changeSign()">+/-</ion-button>
+      <ion-button color="warning" (click)="chooseOperation('÷')">÷</ion-button>
+
+      <ion-button (click)="appendNumber('7')">7</ion-button>
+      <ion-button (click)="appendNumber('8')">8</ion-button>
+      <ion-button (click)="appendNumber('9')">9</ion-button>
+      <ion-button color="warning" (click)="chooseOperation('×')">×</ion-button>
+
+      <ion-button (click)="appendNumber('4')">4</ion-button>
+      <ion-button (click)="appendNumber('5')">5</ion-button>
+      <ion-button (click)="appendNumber('6')">6</ion-button>
+      <ion-button color="warning" (click)="chooseOperation('-')">-</ion-button>
+
+      <ion-button (click)="appendNumber('1')">1</ion-button>
+      <ion-button (click)="appendNumber('2')">2</ion-button>
+      <ion-button (click)="appendNumber('3')">3</ion-button>
+      <ion-button color="warning" (click)="chooseOperation('+')">+</ion-button>
+
+      <ion-button class="span-two" (click)="appendNumber('0')">0</ion-button>
+      <ion-button color="warning" (click)="calculate()">=</ion-button>
+    </div>
+  </div>
+</ion-content>
